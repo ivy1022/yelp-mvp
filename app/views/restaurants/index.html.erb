@@ -1,0 +1,23 @@
+<div class="container mt-3">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-lg-6">
+      <h1>All restaurants</h1>
+
+      <%= link_to new_restaurant_path do %>
+      <i class="fas fa-plus-square"></i>
+      <% end %>
+
+      <div class="cards">
+        <% @restaurants.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant) do %>
+            <div class="card-category">
+              <p><%= restaurant.name  %></p>
+              <p><%= restaurant.address  %></p>
+              <p><%= restaurant.category  %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
